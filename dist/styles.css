@@ -34,7 +34,7 @@ html {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .form-container {
@@ -53,7 +53,6 @@ html {
     height: 13rem;
     width: 13rem;
     background-color: #f68787;
-
 }
 
 .name-date {
