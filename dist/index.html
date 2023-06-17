@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="page-title">
+        To-Do List
+    </div>
+    <div id="add-button-container">
+        <button id="add-task">
+            Add New Task
+        </button>
+    </div>
+    <div class="form-container">
+        <form class="form">
+            <input type="text" id="form-task" placeholder="Task" name="form-task">
+            <input type="date" id="date" name="date">
+            <select id="catagory" name="catagory">
+                <option id="chore">Chore</option>
+                <option id="errand">Errand</option>
+                <option id="appointment">Appointment</option>
+                <option id="Misc/Reminder">Misc/Reminder</option>
+            </select>
+            <select id="priority" name="priority">
+                <option id="low">Low</option>
+                <option id="medium">Medium</option>
+                <option id="high">High</option>
+                <option id="reminder">Reminder</option>
+            </select>
+            <div class="form-buttons">
+                <input type="button" id="cancel" value="Cancel">
+                <input type="submit" id="add" value="Add">
+            </div>
+        </form>
+    </div>
+    <div class="task-info-container">
+        <table>
+            <tbody class="task-info">
+                <td>Task</td>
+                <td>Date</td>
+                <td id="description">Description</td>
+                <td><button id="edit">Edit</button></td>
+                <td><button id="delete">Delete</button></td>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
