@@ -1,9 +1,15 @@
-html, body {
+html {
     margin: 0;
     padding: 0;
-    background-image: ;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #f7f8f8;
+    border: 6px solid #1cb3c8;
+    outline: 4px solid #738598;
+    border-radius: 12px;
+    font-size: 20px;
+    margin: 30px;
+    padding: 30px;
+    outline-offset: 0.5em;
+    color: #3c415e;
 }
 
 #page-title {
@@ -18,12 +24,17 @@ html, body {
     justify-content: center;
     margin-bottom: 2rem;
 }
-#add-task {
+
+.add-task {
     font-size: 36px;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5rem;
+}
+
+.hidden {
+    display: none;
 }
 
 .form-container {
@@ -37,3 +48,70 @@ html, body {
     justify-content: center;
     gap: .25rem;
 }
+
+.task-info-container {
+    height: 13rem;
+    width: 13rem;
+    background-color: #f68787;
+
+}
+
+.name-date {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 28px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    font-weight: bold;
+}
+
+.task-description {
+    font-size: 24px;
+    padding-top: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 6rem;
+}
+
+.category-chip {
+    display: inline-block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    margin-left: 8px;
+    margin-top: 12px;
+}
+
+.chips {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.priority-chip {
+    display: inline-block;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    margin-left: 8px;
+    margin-top: 12px;
+}
+
+.task-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;  
+}
+
+#edit,
+#delete {
+    margin-top: .5rem;
+}
+
