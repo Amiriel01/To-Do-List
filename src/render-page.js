@@ -74,20 +74,49 @@ function showTaskCards() {
         cardCreate.classList.add("task-info-container");
         taskBoard.appendChild(cardCreate)
 //create like I did last project for card formatting//
+        let createNameDate = document.createElement("div");
+        createNameDate.classList.add("name-date");
+        cardCreate.appendChild(createNameDate)   
         
+        let taskDiv = document.createElement("div");
+        taskDiv.classList.add("task-name");
+        taskDiv.innerText = card.task
+        
+
         let dateDiv = document.createElement("div");
         dateDiv.classList.add("task-date");
-        cardCreate.appendChild(dateDiv);
-        //dateDiv.innerText = card.date;
-        dateDiv.innerText = moment(card.date).format("MMM Do YYYY");
-        console.log(card.date);
-        // for (let key in card) {
-        //     let taskItems = document.createElement("div");
-        //     taskItems.textContent = (`${card[key]}`);
-        //     cardCreate.appendChild(taskItems);
-        //     taskItems.classList.add(key);
+        dateDiv.innerText = moment(card.date).format("M/D/YYYY");
+        
+        //appends all divs to createNameDate//
+        createNameDate.appendChild(taskDiv);
+        createNameDate.appendChild(dateDiv);
 
-        // } 
+        let descriptionDiv = document.createElement("div");
+        descriptionDiv.classList.add("task-description");
+        descriptionDiv.innerText = card.description;
+        cardCreate.appendChild(descriptionDiv);
+
+        let chipContainer = document.createElement("div");
+        chipContainer.classList.add("chips");
+        cardCreate.appendChild(chipContainer);
+
+        let chipCategory = document.createElement("div");
+        chipCategory.classList.add("category-chip");
+        chipCategory.innerText = card.catagory;
+        chipContainer.appendChild(chipCategory);
+
+        let chipPriority = document.createElement("div");
+        chipPriority.classList.add("priority-chip");
+        chipPriority.innerText = card.priority;
+        chipContainer.appendChild(chipPriority);
+
+        // if (document.getElementById('priority-chip').value == 'low') {
+        //     document.getElementById('low').style.color = 'rgb(81, 189, 81)';
+
+        let taskButtons = document.createElement("div");
+        taskButtons.classList.add("task-buttons");
+        cardCreate.appendChild(taskButtons);
+
         let editCard = document.createElement("div");
         let editButton = document.createElement("button");
         editButton.innerText = "Edit"
@@ -100,7 +129,7 @@ function showTaskCards() {
             submit.addEventListener("click", removeTask);
         })
         editCard.appendChild(editButton);
-        cardCreate.appendChild(editCard);
+        taskButtons.appendChild(editCard);
 
         let deleteCard = document.createElement("div");
         let deleteButton = document.createElement("button");
@@ -110,7 +139,7 @@ function showTaskCards() {
             showTaskCards();
         })
         deleteCard.appendChild(deleteButton);
-        cardCreate.appendChild(deleteCard);
+        taskButtons.appendChild(deleteCard);
     })
 
 
@@ -127,6 +156,7 @@ function clearForm() {
     date.value = "";
     description.value = "";
 }
+
 
 
 // submit.addEventListener("click", () => {
