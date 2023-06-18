@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,7 +24,7 @@
         <form class="form">
             <input type="text" id="form-task" placeholder="Task" name="form-task">
             <input type="date" id="form-date" name="form-date">
-            <input type="description" id="form-description" name="form-description">
+            <input type="description" id="form-description" name="form-description" placeholder = "Task Description">
             <select id="form-catagory" name="form-catagory">
                 <option id="chore">Chore</option>
                 <option id="errand">Errand</option>
@@ -31,7 +33,8 @@
             </select>
             <select id="form-priority" name="form-priority">
                 <option id="low">Low</option>
-                <option id="medium">Medium</option>
+                <option 
+                id="medium">Medium</option>
                 <option id="high">High</option>
                 <option id="reminder">Reminder</option>
             </select>
@@ -54,8 +57,16 @@
                 <div class="priority-chip">Low</div>
             </div>
             <div class="task-buttons">
-                <button id="edit">Edit</button>
-                <button id="delete">Delete</button>
+                <button id="edit">
+                    <span class="material-symbols-outlined">
+                    edit_note
+                    </span>
+                </button>
+                <button id="delete">
+                    <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                </button>
             </div>
         </div>
     </div>

@@ -17,6 +17,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "material-icons": "^1.13.8",
     "moment": "^2.29.4"
   }
 }

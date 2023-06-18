@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -9,10 +14,21 @@ html {
     margin: 30px;
     padding: 30px;
     outline-offset: 0.5em;
-    color: #3c415e;
+}
+
+body {
+    background-image: url(images/corkboard.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 35rem;
 }
 
 #page-title {
+    color: #1cb3c8;
+    text-shadow: -1px 1px 4px #566473,
+				  1px 1px 4px #566473,
+				  1px -1px 0 #566473,
+				  -1px -1px 0 #566473;
     font-size: 110px;
     font-weight: bold;
     text-align: center;
@@ -40,30 +56,66 @@ html {
 .form-container {
     display: flex;
     justify-content: center;
+    height: 66px;
 }
 
 .form {
     display: flex;
-    width: 63rem;
+    width: 70rem;
     justify-content: center;
     gap: .25rem;
+    height: 48px;
+    font-size: 36px;
+}
+
+input,
+select,
+#cancel,
+#submit {
+    font-size: 20px;
+}
+
+#cancel,
+#submit {
+    height: 48px;
+    padding: 12px;
+    background-color:#1cb3c8;
+}
+
+.task-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .task-info-container {
     height: 13rem;
     width: 13rem;
     background-color: #f68787;
+    margin-left: .5rem;
+    margin-right: .5;
+    margin-top:2rem;
+    color:#3d4752;
+    margin-bottom: 1rem;
 }
 
 .name-date {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-    font-size: 28px;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 12px;
+    
+}
+
+.task-name {
     font-weight: bold;
+    font-size: 28px;
+}
+
+.task-date {
+    font-size: 18px;
+    padding-top: .5rem;
 }
 
 .task-description {
@@ -71,14 +123,14 @@ html {
     padding-top: 12px;
     padding-left: 8px;
     padding-right: 8px;
-    height: 6rem;
+    height: 5rem;
 }
 
 .category-chip {
     display: inline-block;
     padding: 0 20px;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     border-radius: 25px;
     background-color: #f1f1f1;
     margin-left: 8px;
@@ -89,28 +141,49 @@ html {
     display: flex;
     justify-content: space-around;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .priority-chip {
     display: inline-block;
     padding: 0 20px;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     border-radius: 25px;
     background-color: #f1f1f1;
     margin-left: 8px;
     margin-top: 12px;
 }
 
+/* .priority-chip [value="low"] {
+    background: rgb(81, 189, 81);
+} */
+.priority-chip #low {
+    background-color: rgb(81, 189, 81);
+}
+.priority-chip [value="medium"] {
+    background: rgb(238, 238, 81);
+}
+
+.priority-chip [value="high"] {
+    background: rgb(247, 46, 46);
+}
+
+.priority-chip [value="reminder"] {
+    background: rgb(76, 76, 164);
+}
+
 .task-buttons {
+    
     display: flex;
     justify-content: center;
-    gap: 8px;  
+    gap: 8px; 
+    padding-top: 1rem; 
 }
 
 #edit,
 #delete {
-    margin-top: .5rem;
+    margin-top: 1rem;
+    
 }
 
