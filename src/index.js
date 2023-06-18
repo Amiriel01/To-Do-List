@@ -9,6 +9,7 @@ import { showTaskCards } from "./render-page";
 attachEventListeners();
 showTaskCards();
 
+
 //calls the renderPage function that will show the DOM manipulations//
 //renderPage();
 
