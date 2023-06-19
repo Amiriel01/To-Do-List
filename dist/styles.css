@@ -25,10 +25,10 @@ body {
 
 #page-title {
     color: #1cb3c8;
-    text-shadow: -1px 1px 4px #566473,
-				  1px 1px 4px #566473,
-				  1px -1px 0 #566473,
-				  -1px -1px 0 #566473;
+    text-shadow: -1px 1px 4px #f7f8f8,
+        1px 1px 4px #f7f8f8,
+        1px -1px 0 #f7f8f8,
+        -1px -1px 0 #f7f8f8;
     font-size: 110px;
     font-weight: bold;
     text-align: center;
@@ -39,6 +39,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+
 }
 
 .add-task {
@@ -47,6 +48,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0.5rem;
+    border: #1cb3c8 5px solid;
 }
 
 .hidden {
@@ -79,7 +81,7 @@ select,
 #submit {
     height: 48px;
     padding: 12px;
-    background-color:#1cb3c8;
+    background-color: #1cb3c8;
 }
 
 .task-board {
@@ -91,12 +93,14 @@ select,
 .task-info-container {
     height: 13rem;
     width: 13rem;
-    background-color: #f68787;
     margin-left: .5rem;
     margin-right: .5;
-    margin-top:2rem;
-    color:#3d4752;
+    margin-top: 2rem;
+    color: #3d4752;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px  #f1f1f1;
 }
 
 .name-date {
@@ -105,25 +109,28 @@ select,
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 12px;
-    
+    flex-shrink: 1;
+    flex-grow: 0;
 }
 
 .task-name {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .task-date {
-    font-size: 18px;
-    padding-top: .5rem;
+    font-size: 20px;
 }
 
 .task-description {
-    font-size: 24px;
+    font-size: 16px;
     padding-top: 12px;
     padding-left: 8px;
     padding-right: 8px;
-    height: 5rem;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    word-break: break-all;
 }
 
 .category-chip {
@@ -135,6 +142,25 @@ select,
     background-color: #f1f1f1;
     margin-left: 8px;
     margin-top: 12px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    border: solid 2px  #f1f1f1;
+}
+
+.category-chip[value="Chore"] {
+    background: rgb(206, 73, 155);
+}
+
+.category-chip[value="Errand"] {
+    background: rgb(227, 124, 28);
+}
+
+.category-chip[value="Appointment"] {
+    background: rgb(29, 29, 114);
+}
+
+.category-chip[value="Misc"] {
+    background: rgb(82, 212, 110);
 }
 
 .chips {
@@ -153,37 +179,37 @@ select,
     background-color: #f1f1f1;
     margin-left: 8px;
     margin-top: 12px;
+    border: solid 2px  #f1f1f1;
 }
 
-/* .priority-chip [value="low"] {
+.priority-chip[value="Low"] {
     background: rgb(81, 189, 81);
-} */
-.priority-chip #low {
-    background-color: rgb(81, 189, 81);
-}
-.priority-chip [value="medium"] {
-    background: rgb(238, 238, 81);
 }
 
-.priority-chip [value="high"] {
+.priority-chip[value="Medium"] {
+    background: rgb(232, 232, 46);
+}
+
+.priority-chip[value="High"] {
     background: rgb(247, 46, 46);
 }
 
-.priority-chip [value="reminder"] {
-    background: rgb(76, 76, 164);
+.priority-chip[value="Reminder"] {
+    background: rgb(95, 95, 155);
 }
 
 .task-buttons {
-    
     display: flex;
     justify-content: center;
-    gap: 8px; 
-    padding-top: 1rem; 
+    gap: 8px;
+    padding-top: 1rem;
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin-bottom: .5rem;
 }
 
 #edit,
 #delete {
-    margin-top: 1rem;
-    
-}
+    margin-top: .5rem;
 
+}

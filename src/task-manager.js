@@ -14,16 +14,16 @@ function getTasks() {
 }
 
 //all cards have this data from the form to the card//
-function TaskCard(task, date, description, catagory, priority) {
+function TaskCard(task, date, description, category, priority) {
     this.task = task;
     this.date = date;
     this.description = description;
-    this.catagory = catagory;
+    this.category = category;
     this.priority = priority;
 }
 
-function createTask(task, date, description, catagory, priority) {
-    let addNewCard = new TaskCard(task, date, description, catagory, priority);
+function createTask(task, date, description, category, priority) {
+    let addNewCard = new TaskCard(task, date, description, category, priority);
     taskCardArray.push(addNewCard);
 }
 export {

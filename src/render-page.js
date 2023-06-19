@@ -9,10 +9,10 @@ import moment from "moment";
 function attachEventListeners() {
     let addTask = document.querySelector(".add-task");
     //hidden form elements//
-    
+
     let submit = document.querySelector("#submit");
     let cancel = document.querySelector("#cancel");
-    
+
 
     addTask.addEventListener("click", toggleHidden);
 
@@ -21,13 +21,13 @@ function attachEventListeners() {
         showTaskCards();
         clearForm();
         toggleHidden();
-        
+
     })
 
     cancel.addEventListener("click", () => {
         clearForm();
         toggleHidden();
-        
+
     })
 }
 
@@ -52,11 +52,11 @@ function addCard() {
     let priority = document.querySelector("#form-priority");
 
     createTask(task.value, date.value, description.value, catagory.value, priority.value);
-}  
+}
 
 //this function will display the new task cards on the page//
 function showTaskCards() {
-    
+
     //event listeners needed for function//
     let formContainer = document.querySelector(".form-container");
     let task = document.querySelector("#form-task");
@@ -72,21 +72,35 @@ function showTaskCards() {
     getTasks().forEach(card => {
         let cardCreate = document.createElement("div");
         cardCreate.classList.add("task-info-container");
-        taskBoard.appendChild(cardCreate)
-//create like I did last project for card formatting//
+        taskBoard.appendChild(cardCreate);
+
+        let red = Math.floor((Math.random() * 255) + 1);
+        let blue = Math.floor((Math.random() * 255) + 1);
+        let green = Math.floor((Math.random() * 255) + 1);
+
+        cardCreate.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
+
+        cardCreate.style.color = "#fff";
+
+        if (red < 128 || blue < 128 || green < 128) {
+
+        }
+
+        //create like I did last project for card formatting//
         let createNameDate = document.createElement("div");
         createNameDate.classList.add("name-date");
-        cardCreate.appendChild(createNameDate)   
-        
+        cardCreate.appendChild(createNameDate)
+
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("task-name");
         taskDiv.innerText = card.task
-        
+
 
         let dateDiv = document.createElement("div");
         dateDiv.classList.add("task-date");
-        dateDiv.innerText = moment(card.date).format("M/D/YYYY");
-        
+        if (!!card.date)
+            dateDiv.innerText = moment(card.date).format("M/D/YYYY");
+
         //appends all divs to createNameDate//
         createNameDate.appendChild(taskDiv);
         createNameDate.appendChild(dateDiv);
@@ -102,16 +116,15 @@ function showTaskCards() {
 
         let chipCategory = document.createElement("div");
         chipCategory.classList.add("category-chip");
-        chipCategory.innerText = card.catagory;
+        chipCategory.innerText = card.category;
+        chipCategory.setAttribute("value", card.category);
         chipContainer.appendChild(chipCategory);
 
         let chipPriority = document.createElement("div");
         chipPriority.classList.add("priority-chip");
         chipPriority.innerText = card.priority;
+        chipPriority.setAttribute("value", card.priority);
         chipContainer.appendChild(chipPriority);
-
-        // if (document.getElementById('priority-chip').value == 'low') {
-        //     document.getElementById('low').style.color = 'rgb(81, 189, 81)';
 
         let taskButtons = document.createElement("div");
         taskButtons.classList.add("task-buttons");
@@ -120,6 +133,10 @@ function showTaskCards() {
         let editCard = document.createElement("div");
         let editButton = document.createElement("button");
         editButton.innerText = "Edit"
+        let editIcon = document.createElement("span");
+        editIcon.classList.add("material-symbols-outlined");
+        editIcon.innerText = "edit_note";
+        editButton.appendChild(editIcon);
 
         editButton.addEventListener("click", () => {
             task.value = card.task;
@@ -134,6 +151,11 @@ function showTaskCards() {
         let deleteCard = document.createElement("div");
         let deleteButton = document.createElement("button");
         deleteButton.innerText = "Delete";
+        let deleteIcon = document.createElement("span");
+        deleteIcon.classList.add("material-symbols-outlined");
+        deleteIcon.innerText = "delete";
+        deleteButton.appendChild(deleteIcon);
+        
         deleteButton.addEventListener("click", () => {
             removeTask(card);
             showTaskCards();
@@ -141,9 +163,8 @@ function showTaskCards() {
         deleteCard.appendChild(deleteButton);
         taskButtons.appendChild(deleteCard);
     })
-
-
 }
+
 
 
 
