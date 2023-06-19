@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div id="page-title">
-        To-Do List
+        To-Do List 
     </div>
     <div id="add-button-container">
         <button class="add-task">
@@ -22,19 +21,18 @@
     </div>
     <div class="form-container hidden">
         <form class="form">
-            <input type="text" id="form-task" placeholder="Task" name="form-task">
+            <input type="text" id="form-task" placeholder="Task" name="form-task" maxlength="8">
             <input type="date" id="form-date" name="form-date">
-            <input type="description" id="form-description" name="form-description" placeholder = "Task Description">
+            <input type="description" id="form-description" name="form-description" placeholder = "Task Description" maxlength="100">
             <select id="form-catagory" name="form-catagory">
                 <option id="chore">Chore</option>
                 <option id="errand">Errand</option>
                 <option id="appointment">Appointment</option>
-                <option id="Misc/Reminder">Misc/Reminder</option>
+                <option id="misc">Misc</option>
             </select>
             <select id="form-priority" name="form-priority">
                 <option id="low">Low</option>
-                <option 
-                id="medium">Medium</option>
+                <option id="medium">Medium</option>
                 <option id="high">High</option>
                 <option id="reminder">Reminder</option>
             </select>
