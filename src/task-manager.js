@@ -7,7 +7,7 @@ if (!!window.localStorage.getItem("taskList")) {
 
 function saveTaskList() {
     window.localStorage.setItem('taskList', JSON.stringify(taskCardArray));
-    console.log(JSON.stringify(taskCardArray));
+    // console.log(JSON.stringify(taskCardArray));
 }
 
 //create, read, update, delete (CRUD) functions//
