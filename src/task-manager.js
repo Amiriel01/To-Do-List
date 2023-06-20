@@ -16,7 +16,7 @@ function saveTaskList() {
 function removeTask(task) {
     let index = taskCardArray.indexOf(task);
     taskCardArray.splice(index, 1);
-    saveTaskList();
+    // saveTaskList();
 }
 
 function getTasks() {
