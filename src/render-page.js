@@ -27,7 +27,6 @@ function attachEventListeners() {
     cancel.addEventListener("click", () => {
         clearForm();
         toggleHidden();
-
     })
 }
 
@@ -165,9 +164,6 @@ function showTaskCards() {
     })
 }
 
-
-
-
 function clearForm() {
     let task = document.querySelector("#form-task");
     let date = document.querySelector("#form-date");
@@ -177,20 +173,6 @@ function clearForm() {
     date.value = "";
     description.value = "";
 }
-
-
-
-// submit.addEventListener("click", () => {
-//     addCard();
-//     showTaskCards();
-//     clearForm();
-//     toggleHidden();
-// })
-
-// cancel.addEventListener("click", () => {
-//     clearForm();
-//     toggleHidden();
-// })
 
 
 export {

@@ -1,5 +1,14 @@
-//creates empty array for task data to go in to//
+
 let taskCardArray = [];
+
+if (!!window.localStorage.getItem("taskList")) {
+    taskCardArray = JSON.parse(window.localStorage.getItem("taskList"));
+}
+
+function saveTaskList() {
+    window.localStorage.setItem('taskList', JSON.stringify(taskCardArray));
+    console.log(JSON.stringify(taskCardArray));
+}
 
 //create, read, update, delete (CRUD) functions//
 
@@ -7,8 +16,9 @@ let taskCardArray = [];
 function removeTask(task) {
     let index = taskCardArray.indexOf(task);
     taskCardArray.splice(index, 1);
-    // submit.removeEventListener("click", removeItem);
+    saveTaskList();
 }
+
 function getTasks() {
     return taskCardArray;
 }
@@ -25,7 +35,9 @@ function TaskCard(task, date, description, category, priority) {
 function createTask(task, date, description, category, priority) {
     let addNewCard = new TaskCard(task, date, description, category, priority);
     taskCardArray.push(addNewCard);
+    saveTaskList();
 }
+
 export {
     removeTask,
     getTasks,
