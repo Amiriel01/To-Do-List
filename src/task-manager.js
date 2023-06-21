@@ -1,4 +1,3 @@
-
 let taskCardArray = [];
 
 if (!!window.localStorage.getItem("taskList")) {
@@ -7,8 +6,9 @@ if (!!window.localStorage.getItem("taskList")) {
 
 function saveTaskList() {
     window.localStorage.setItem('taskList', JSON.stringify(taskCardArray));
-    // console.log(JSON.stringify(taskCardArray));
+    console.log(JSON.stringify(taskCardArray));
 }
+
 
 //create, read, update, delete (CRUD) functions//
 
@@ -16,7 +16,8 @@ function saveTaskList() {
 function removeTask(task) {
     let index = taskCardArray.indexOf(task);
     taskCardArray.splice(index, 1);
-    // saveTaskList();
+    // localStorage.removeItem(index, 1);
+    saveTaskList();
 }
 
 function getTasks() {
@@ -37,7 +38,7 @@ function createTask(task, date, description, category, priority) {
     taskCardArray.push(addNewCard);
     saveTaskList();
 }
-
+// console.log(taskCardArray);
 export {
     removeTask,
     getTasks,

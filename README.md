@@ -1,6 +1,6 @@
 # To-Do-List
 
-**Objective**
+**Objective:**
 
 I created a To-Do List using JavaScript, HTML, CSS, Webpack, JSON, and local storage. The To-Do List will save tasks for the user with the options listed below:
 

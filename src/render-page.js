@@ -142,7 +142,7 @@ function showTaskCards() {
             date.value = card.date;
             description.value = card.description;
             toggleHidden();
-            submit.addEventListener("click", removeTask);
+            removeTask(task);
         })
         editCard.appendChild(editButton);
         taskButtons.appendChild(editCard);
@@ -154,7 +154,7 @@ function showTaskCards() {
         deleteIcon.classList.add("material-symbols-outlined");
         deleteIcon.innerText = "delete";
         deleteButton.appendChild(deleteIcon);
-        
+
         deleteButton.addEventListener("click", () => {
             removeTask(card);
             showTaskCards();
